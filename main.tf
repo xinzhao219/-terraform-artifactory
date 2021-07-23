@@ -22,3 +22,9 @@ provider "aws" {
   profile = "devops"
   region  = "ap-southeast-2"
 }
+
+provider "artifactory" {
+  url      = "https://xinzhao.jfrog.io/"
+  username = data.aws_ssm_parameter.artifactory_username.value
+  password = data.aws_ssm_parameter.artifactory_password.value
+}
